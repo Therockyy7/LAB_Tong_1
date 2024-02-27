@@ -1,1 +1,9 @@
-ID=SVRO-0004, Name=huhi, Square=111, Price1111, numOfPer12, type=luu, service=1
+ID=SVVL-0001, Name=Villa 1, Square=600, Price=2000, numOfPer=10,type=Villa, roomType=luxury, poolSquare=80, floor=4
+ID=SVVL-0002, Name=Villa 2, Square=400, Price=400, numOfPer=10,type=Villa, roomType=standard, poolSquare=60, floor=3
+ID=SVVL-0003, Name=Villa 3, Square=250, Price=200, numOfPer=8,type=Villa, roomType=standard, poolSquare=50, floor=3
+ID=SVHO-0001, Name=House 1, Square=200, Price=200, numOfPer=6,type=House, houseType=luxury, floor=2
+ID=SVHO-0002, Name=House 2, Square=100, Price=100, numOfPer=4,type=House, houseType=luxury, floor=1
+ID=SVHO-0003, Name=House 3, Square=80, Price=50, numOfPer=4,type=House, houseType=standard, floor=1
+ID=SVRO-0001, Name=Room 1, Square=50, Price=80, numOfPer=4, type=Room, service=Buffet
+ID=SVRO-0002, Name=Room 2, Square=40, Price=50, numOfPer=4, type=Room, service=Pool
+ID=SVRO-0003, Name=Room 3, Square=40, Price=40, numOfPer=4, type=Room, service=Wifi
