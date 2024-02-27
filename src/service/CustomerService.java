@@ -49,7 +49,7 @@ public class CustomerService {
 
     public void addCus(){
         String ans;
-        int count = 0;
+        int count = listCus.size();
         do{
 
             
@@ -217,5 +217,14 @@ public class CustomerService {
     public void getListFromFile(){
         listCus = customerRepository.loadListCusFromFile();
         displayList();
+    }
+
+    public void saveFile(){
+        if (!listCus.isEmpty()) {
+            customerRepository.writeList(listCus);
+            System.out.println("!!!!!!!!Save complete!!!!!!!!");
+        }else{
+            System.out.println("Not have any information in List.");
+        }
     }
 }

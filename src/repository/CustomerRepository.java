@@ -4,8 +4,12 @@
  */
 package repository;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -20,6 +24,21 @@ import utils.Validation;
  */
 public class CustomerRepository {
     String filePath = "data\\DataCustomer.txt";
+    
+    public void writeList(List<Customer> list){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            BufferedWriter write = new BufferedWriter(new FileWriter(filePath));
+            for(Customer cus : list){
+                String line = "ID: "+cus.getPerId() + "| Name: "+ cus.getPerName() + "| Birth: " + dateFormat.format(cus.getPerBirth()) + "| Sex: " + cus.getPerSex() + "| CMND: "+ cus.getPerCMND() + "| Phone: " +cus.getPerPhone() + "| Email: " +cus.getPerEmail() + "| Level: " +cus.getEmpLevel() + "| Address: " + cus.getEmpAddress() +"\n";
+                write.write(line);
+            }
+            write.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public List<Customer> loadListCusFromFile(){
         List<Customer> listOfCustomers = new ArrayList<>();

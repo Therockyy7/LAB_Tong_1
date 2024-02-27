@@ -53,7 +53,7 @@ public class EmployeeService  {
 
     public void addEmp(){
         String ans;
-        int count = 0;
+        int count = listEmp.size();
         do{
 
             
@@ -245,5 +245,14 @@ public class EmployeeService  {
             e.printStackTrace();
         }
         displayList();
+    }
+
+    public void saveFile(){
+        if (!listEmp.isEmpty()) {
+            employeeRepository.writeList(listEmp);
+            System.out.println("!!!!!!!!Save complete!!!!!!!!");
+        }else{
+            System.out.println("Not have any information in List.");
+        }
     }
 }
