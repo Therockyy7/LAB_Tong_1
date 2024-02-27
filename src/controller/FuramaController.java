@@ -25,6 +25,7 @@ public class FuramaController extends Menu {
             case 1: { //Employee Management         
                 try {
                     String[] mchon = { "Load data from file" ,
+                                        "Save data into file",
                                         "Display list employees",
                                       "Add new employee",
                                       "Edit employee",
@@ -40,6 +41,7 @@ public class FuramaController extends Menu {
             case 2: { //Customer Management
                 try {
                     String[] mchon = {"Load data from file" ,
+                                        "Save data into file",
                                         "Display list customers",
                                       "Add new customer",
                                       "Edit customer",
