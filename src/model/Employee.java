@@ -51,7 +51,7 @@ public class Employee extends Person{
     @Override
     public String toString() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        return (String.format("| %-12s |  %-20s  | %-20s   | %-12s   | %-20s   | %-12s  | %-25s  | %-12s  | %-12s  | %-12s |", getPerId(),getPerName(),dateFormat.format(getPerBirth()),getPerSex(),getPerCMND(),getPerPhone(),getPerEmail(),getEmpLevel(),getEmpPosition(),getEmpSalary()+"$"));
+        return (String.format("| %-12s |  %-30s  | %-20s   | %-12s   | %-20s   | %-12s  | %-25s  | %-12s  | %-20s  | %-12s |", getPerId(),getPerName(),dateFormat.format(getPerBirth()),getPerSex(),getPerCMND(),getPerPhone(),getPerEmail(),getEmpLevel(),getEmpPosition(),getEmpSalary()+"$"));
         
     }
     
