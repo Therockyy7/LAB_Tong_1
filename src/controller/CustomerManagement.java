@@ -37,20 +37,24 @@ public class CustomerManagement extends Menu {
                 customerService.getListFromFile();
             }
             
-            case 2 ->{ //"Display list customers"
+            case 2 ->{ //"Save list customers"
+                customerService.saveFile();
+            }
+
+            case 3 ->{ //"Display list customers"
                 customerService.displayList();
             }
         
 
-            case 3 ->{ //"Add new customer"
+            case 4 ->{ //"Add new customer"
                 customerService.addCus();
             }
             
-            case 4 ->{ // "Edit customer"
+            case 5 ->{ // "Edit customer"
                 customerService.editCus();
             }
             
-            case 5 ->{ // "Return main menu"
+            case 6 ->{ // "Return main menu"
                 System.out.println("Return main menu..");
                 parentMenu.run(); // Gọi phương thức run() của menu cha (FuramaController)
             }

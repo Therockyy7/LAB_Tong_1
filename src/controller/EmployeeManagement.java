@@ -30,18 +30,22 @@ public class EmployeeManagement extends Menu {
                 break;
             
             case 2: //"Display list employees"
+                employeeService.saveFile();
+            break;
+
+            case 3: //"Display list employees"
                 employeeService.displayList();
             break;
 
-            case 3: //"Add new employee"
+            case 4: //"Add new employee"
                 employeeService.addEmp();
                 break;
             
-            case 4: //"Edit employee"
+            case 5: //"Edit employee"
                 employeeService.editEmp();
                 break;
             
-            case 5: //"Return main menu"
+            case 6: //"Return main menu"
                 System.out.println("Return main menu..");
                 parentMenu.run(); // Gọi phương thức run() của menu cha (FuramaController)
                 break;

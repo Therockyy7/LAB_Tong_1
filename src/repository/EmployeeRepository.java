@@ -5,9 +5,11 @@
 package repository;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -16,6 +18,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
+import model.Customer;
 import model.Employee;
 import utils.Validation;
 
@@ -26,6 +29,19 @@ import utils.Validation;
 public class EmployeeRepository {
     String filePath = "src\\data\\DataEmployee.txt";
 
+     public void writeList(List<Employee> list){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            BufferedWriter write = new BufferedWriter(new FileWriter(filePath));
+            for(Employee emp : list){
+                String line = "ID: "+emp.getPerId() + "| Name: "+ emp.getPerName() + "| Birth: " + dateFormat.format(emp.getPerBirth()) + "| Sex: " + emp.getPerSex() + "| CMND: "+ emp.getPerCMND() + "| Phone: " +emp.getPerPhone() + "| Email: " +emp.getPerEmail() + "| Level: " +emp.getEmpLevel() + "| Position: " + emp.getEmpPosition() + "| Salary: " + emp.getEmpSalary() +"\n";
+                write.write(line);
+            }
+            write.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public List<Employee> loadListEmpFromFile() throws  IOException{
         List<Employee> listOfEmployees = new ArrayList<>();
