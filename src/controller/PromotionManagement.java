@@ -2,17 +2,22 @@ package controller;
 
 import service.BookingService;
 import service.FacilityService;
-import repository.PromotionRepository;
+
+import java.io.IOException;
+import java.text.ParseException;
+
+import service.PromotionService;
 import view.Menu;
 
 
 public class PromotionManagement extends Menu {
     BookingService b = new BookingService();
     FacilityService fc = new FacilityService();
-    PromotionRepository pr = new PromotionRepository();
+    PromotionService ps = new PromotionService(b);
+    
     FuramaController parentMenu; // Thêm thuộc tính để lưu trữ menu cha
     
-    public PromotionManagement() {
+    public PromotionManagement(BookingService b) {
     }
 
     public PromotionManagement(String td, String[] mc) {
@@ -24,19 +29,23 @@ public class PromotionManagement extends Menu {
     }
 
     @Override
-    public void execute(int n) throws ParseException, IOException {
+    public void execute(int n) throws ParseException, IOException{
         switch (n){
             case 1 ->{ //"Display list customers use service"
-                pr.showCusService();
+                b.readInf();
+                ps.showCusService();
+                break;
             }
             
             case 2 ->{ //"Display list customers get voucher"
-                pr.giveVoucher();
+                ps.giveVoucher();
+                break;
             }
             
             case 3 ->{ // "Return main menu"
                 System.out.println("Return main menu..");
                 parentMenu.run(); // Gọi phương thức run() của menu cha (FuramaController)
+                break;
             
             }         
         }
