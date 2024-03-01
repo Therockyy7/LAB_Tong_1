@@ -48,7 +48,7 @@ public class BookingManagement extends Menu {
             }
             
             case 4 ->{ // "Display list contracts"
-                
+                bookingService.displayListConstract();
             }
             
             case 5 ->{ //  "Edit contracts"

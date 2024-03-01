@@ -48,14 +48,14 @@ public class BookingService {
     
 
     public void readInf() throws ParseException {
-        Facility r = new Villa("SVVL-0001","Villa 1",600, 2000, 10, "Villa", "luxury", "80", "4");
-        System.out.println(r);
-        bill.put(r, 2);
-        listBooking.add(new Booking("0001", checkdate("20/2/2024"), checkdate("21/2/2024"), checkdate("25/2/2024"), "KH0001", bill));
-        listBooking.add(new Booking("0002", checkdate("19/2/2024"), checkdate("23/2/2024"), checkdate("27/2/2024"), "KH0002", bill));
-        listBooking.add(new Booking("0003", checkdate("21/2/2024"), checkdate("23/2/2024"), checkdate("25/2/2024"), "KH0003", bill));
-        listBooking.add(new Booking("0004", checkdate("20/2/2024"), checkdate("26/2/2024"), checkdate("28/2/2024"), "KH0004", bill));
-        listBooking.add(new Booking("0005", checkdate("20/2/2024"), checkdate("24/2/2024"), checkdate("27/2/2024"), "KH0005", bill));
+        // Facility r = new Villa("SVVL-0001","Villa 1",600, 2000, 10, "Villa", "luxury", "80", "4");
+        // System.out.println(r);
+        // bill.put(r, 2);
+        // listBooking.add(new Booking("0001", checkdate("20/2/2024"), checkdate("21/2/2024"), checkdate("25/2/2024"), "KH0001", bill));
+        // listBooking.add(new Booking("0002", checkdate("19/2/2024"), checkdate("23/2/2024"), checkdate("27/2/2024"), "KH0002", bill));
+        // listBooking.add(new Booking("0003", checkdate("21/2/2024"), checkdate("23/2/2024"), checkdate("25/2/2024"), "KH0003", bill));
+        // listBooking.add(new Booking("0004", checkdate("20/2/2024"), checkdate("26/2/2024"), checkdate("28/2/2024"), "KH0004", bill));
+        // listBooking.add(new Booking("0005", checkdate("20/2/2024"), checkdate("24/2/2024"), checkdate("27/2/2024"), "KH0005", bill));
     }
 
     public void addBooking() throws ParseException, IOException {
@@ -277,5 +277,16 @@ public class BookingService {
         }
         return false;
     }
-}
 
+    public void displayListConstract() {
+        System.out.println("Constract List: ");
+        System.out.println("+-----------------+-----------------+-----------------+-----------------+");
+        System.out.printf("| %-15s | %-15s | %-15s | %-15s |\n", "Constract ID", "Booking ID", "Deposit amount", "Total amount");
+
+        for (Constract c : listConstract) {
+            System.out.println("+-----------------+-----------------+-----------------+-----------------+");
+            System.out.printf("| %-15s | %-15s | %-15s | %-15s |\n", c.getConstractId(), c.getBookingId(), c.getDeposit(), c.getTotal());
+        }
+        System.out.println("+-----------------+-----------------+-----------------+-----------------+");     
+}
+}
